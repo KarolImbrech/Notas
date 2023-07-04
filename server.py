@@ -6,6 +6,14 @@ app = Flask(__name__, static_url_path="", static_folder='frontend/statics', temp
 def func_home():
     return render_template("home.html")
 
+@app.route("/profesor_page")
+def profesor_page():
+    return render_template("profesor_page.html")
+
+@app.route("/estudiante_page")
+def estudiante_page():
+    return render_template("estudiante_page.html")
+
 if __name__ == "__main__":
     host = "127.0.0.1"
     port = 3000
