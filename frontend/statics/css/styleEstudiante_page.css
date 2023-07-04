@@ -6,6 +6,14 @@ body {
     margin-top: 5%;
     margin-bottom: 2%;
 }
+#tabla {
+    position: absolute;
+    left: 35%;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
 
 label{
     position: absolute;
