@@ -2,9 +2,8 @@ import sqlite3
 
 def connect():
     try:
-        conn = sqlite3.connect('notas.db')
+        conn = sqlite3.connect("notas.db")
         cursor = conn.cursor()
-
         return conn
     except sqlite3.Error as err:
         print(err)
@@ -12,10 +11,10 @@ def connect():
 
 
 def update(id, asignatura, nota):
-        conn = sqlite3.connect('notas.db')
+        conn = sqlite3.connect("notas.db")
         cursor = conn.cursor()
         try:
-            instruccion = "UPDATE estudiantes SET " + asignatura + "=" +  str(nota) + " WHERE id=" + str(id) + ";"
+            instruccion = "UPDATE estudiante SET " + asignatura + "=" +  str(nota) + " WHERE id=" + str(id) + ";"
             cursor.execute(instruccion)
             conn.commit()
             print("Nota actualizada")
@@ -26,9 +25,9 @@ def update(id, asignatura, nota):
         
 def consult(id): 
         try:
-            conn = sqlite3.connect('notas.db')
+            conn = sqlite3.connect("notas.db")
             cursor = conn.cursor()
-            instruction = "SELECT * FROM estudiantes WHERE id=" + str(id) + ";"         
+            instruction = "SELECT * FROM estudiante WHERE id=" + str(id) + ";"         
             cursor.execute(instruction)
             notas = cursor.fetchone()
             return notas
